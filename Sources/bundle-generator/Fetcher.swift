@@ -24,8 +24,10 @@ struct Fetcher {
         
         let lastCommit = try parseLastCommit()
         let branchName = parseBranchName()
+        let workspaceStatus = parseWorkspaceStatus()
         return .init(lastCommit: lastCommit,
-                     branch: branchName)
+                     branch: branchName,
+                     isWorkspaceClean: workspaceStatus)
     }
     
     private func parseBranchName() -> String? {
@@ -79,14 +81,30 @@ struct Fetcher {
     private func parseCommitSubject() -> String? {
         try? runGit("show", "-s", "--format=%s")
     }
-    
+
+    private func parseWorkspaceStatus() -> Bool {
+        do {
+            let result = try runGit("status", "--porcelain")
+            if result.isEmpty {
+                print("Workspace was clean.")
+            } else {
+                print("Workspace was dirty.")
+            }
+            return result.isEmpty
+        } catch {
+            fatalError("Failed to get workspace status: \(error.localizedDescription)")
+        }
+    }
+
     private func gitProcess(for arguments: [String]) -> Process {
         let process = Process()
         process.executableURL = gitExecutablePath
         process.arguments = arguments
         return process
     }
-    
+
+    // Errors thrown from this function may be getting swallowed by the try? calls in the various parse* methods.
+    // Check the assumptions made here about what outputs are errors and what isn't.
     private func runGit(_ subCommand: String, _ options: String...) throws -> String {
         fileManager.changeCurrentDirectoryPath(repositoryPath.path)
         let standardOutput = Pipe()
@@ -111,8 +129,8 @@ struct Fetcher {
             }
         }
         
-        let outputData = try standardOutput.fileHandleForReading.readToEnd()
-        guard let outputData else { throw Error.unexpectedOutput }
+        let outputData = try standardOutput.fileHandleForReading.readToEnd() ?? Data()
+
         guard let string = String(data: outputData, encoding: .utf8) else {
             throw Error.unexpectedOutput
         }

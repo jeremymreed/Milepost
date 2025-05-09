@@ -1,9 +1,10 @@
 import Foundation
 
 public struct Revision: Codable {
-    public init(lastCommit: Revision.Commit, branch: String? = nil) {
+    public init(lastCommit: Revision.Commit, branch: String? = nil, isWorkspaceClean: Bool) {
         self.lastCommit = lastCommit
         self.branch = branch
+        self.isWorkspaceClean = isWorkspaceClean
     }
     
     public struct Commit: Codable {
@@ -42,6 +43,7 @@ public struct Revision: Codable {
     }
     public var lastCommit: Commit
     public var branch: String?
+    public var isWorkspaceClean: Bool
 }
 
 extension Revision {
