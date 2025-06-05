@@ -1,10 +1,10 @@
 //
 //  RevisionView.swift
 //  Milepost
-//  v1.0.0
 //
 //  Created by Jeremy M. Reed on 6/5/25.
 //
+//  v1.0.0
 
 import Milepost
 import SwiftUI
