@@ -42,6 +42,7 @@ This library provides [SwiftPM Build Tools Plugin](https://github.com/apple/swif
         
 <img src="./Documentation/build-phase.png" width="600px">
 
+### 3. See example RevisionView in Documentation/sample-code/RevisionView.swift
 
 ## Usage
 
