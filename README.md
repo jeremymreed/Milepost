@@ -1,6 +1,6 @@
 # Milepost
 
-[![Build Status](https://img.shields.io/github/workflow/status/giginet/Milepost/Milepost?style=flat-square)](https://github.com/giginet/Milepost/actions?query=workflow%3AMilepost)
+[![Build Status](https://img.shields.io/github/workflow/status/jeremymreed/Milepost/Milepost?style=flat-square)](https://github.com/jeremymreed/Milepost/actions?query=workflow%3AMilepost)
 [![Language](https://img.shields.io/static/v1.svg?label=language&message=Swift%205.6&color=FA7343&logo=swift&style=flat-square)](https://swift.org)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat-square)](https://swift.org/package-manager/) 
 [![Platform](https://img.shields.io/static/v1.svg?label=platform&message=iOS|macOS|watchOS|tvOS&color=grey&logo=apple&style=flat-square)](https://github.com/jeremymreed/Milepost/blob/main/Package.swift)
