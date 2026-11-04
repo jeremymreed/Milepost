@@ -3,8 +3,8 @@
 [![Build Status](https://img.shields.io/github/workflow/status/giginet/Milepost/Milepost?style=flat-square)](https://github.com/giginet/Milepost/actions?query=workflow%3AMilepost)
 [![Language](https://img.shields.io/static/v1.svg?label=language&message=Swift%205.6&color=FA7343&logo=swift&style=flat-square)](https://swift.org)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat-square)](https://swift.org/package-manager/) 
-[![Platform](https://img.shields.io/static/v1.svg?label=platform&message=iOS|macOS|watchOS|tvOS&color=grey&logo=apple&style=flat-square)](https://github.com/giginet/Milepost/blob/main/Package.swift)
-[![License](https://img.shields.io/github/license/giginet/Milepost?&style=flat-square)](https://github.com/giginet/Milepost/blob/main/LICENSE.md)
+[![Platform](https://img.shields.io/static/v1.svg?label=platform&message=iOS|macOS|watchOS|tvOS&color=grey&logo=apple&style=flat-square)](https://github.com/jeremymreed/Milepost/blob/main/Package.swift)
+[![License](https://img.shields.io/github/license/jeremymreed/Milepost?&style=flat-square)](https://github.com/jeremymreed/Milepost/blob/main/LICENSE.md)
 
 A Simple SwiftPM plugin to show Git commit on your apps
 
@@ -23,7 +23,7 @@ This library provides [SwiftPM Build Tools Plugin](https://github.com/apple/swif
 ### 1. Integrate Milepost in your project with SwiftPM
 
 - File > Add Packages...
-- Enter `https://github.com/giginet/Milepost.git`
+- Enter `https://github.com/jeremymreed/Milepost.git`
 - Choose `Milepost` product
 
 <img src="./Documentation/install.png" width="600px">
